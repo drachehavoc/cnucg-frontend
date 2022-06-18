@@ -1,0 +1,304 @@
+// https://developers.google.com/fonts/docs/material_symbols
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --color-accent: #78B96D;
+    --color-background: #EDECE0;
+    --color-hover: #b8ffb56b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    height: 100vh;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &.preload *,
+    &.preload {
+        animation-duration: 0s !important;
+        -webkit-animation-duration: 0s !important;
+        transition: background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+    }
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-accent);
+    padding: .5em;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+
+    .logo {
+        width: 12em;
+        border-radius: 4px;
+        filter: brightness(0) invert(1);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .search {
+        display: flex;
+        padding: .5em var(--menu-item-size);
+
+        input {
+            width: 100%;
+            min-width: 250px;
+            outline: none;
+            outline: none;
+            border: 1px solid #D4D4D4;
+            border-right: none;
+            border-radius: 6px 0 0 6px;
+            padding: .5em;
+            font-size: 1.2em;
+        }
+
+        button {
+            padding: .5em;
+            border: none;
+            border-left: none;
+            border: 1px solid #D4D4D4;
+            border-radius: 0 6px 6px 0;
+        }
+    }
+
+    .permission-name {
+        display: flex;
+        column-gap: 5px;
+
+        span {
+            background-color: #D4D4D4;
+            font-size: 70%;
+            border-radius: 6px;
+            padding: .15em .5em;
+        }
+    }
+}
+
+main {
+    height: 100%;
+    position: relative;
+
+    section {
+        overflow: auto;
+        flex-grow: 1;
+        transition: .3s;
+        flex: none;
+        height: 100%;
+        position: absolute;
+        inset: 0 0;
+
+        .user-form {
+            display: flex;
+            flex-wrap: wrap;
+            // flex-direction: column;
+            margin: 0 auto;
+            width: min(50%, 760px);
+
+            h2 {
+                flex: 1 1 100%;
+            }
+
+            >div {
+                display: inline-block;
+                flex: 1 1 100%;
+                padding: .25em;
+
+                &._2 {
+                    flex: 1 1 50%;
+                }
+
+                &._3 {
+                    flex: 1 1 33.3333%;
+                }
+
+                select,
+                input {
+                    width: 100%;
+                    padding: 12px;
+                    margin: 8px 0;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    outline: none;
+
+                    &:focus,
+                    &:hover {
+                        border-color: rgb(65, 173, 38);
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+
+        &.before-show {
+            transform: translateX(50%);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &.close {
+            transform: translateX(-50%);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &.home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            --menu-item-size: 250px;
+
+            .menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                padding: 1em;
+                row-gap: 15px;
+                column-gap: 15px;
+                overflow: auto;
+                height: 100%;
+                flex-grow: 1;
+                // width: 1000px;
+
+                .menu-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 1em;
+                    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+                    background-color: #FFFFFF;
+                    border-radius: 6px;
+                    width: var(--menu-item-size);
+                    height: var(--menu-item-size);
+                    user-select: none;
+                    transition: .3s;
+
+                    &[data-unlogged],
+                    [data-permission="user"],
+                    [data-permission="admin"] {
+                        display: none !important;
+                    }
+
+                    .user {
+                        background-color: yellow !important;
+                    }
+
+                    .admin {
+                        background-color: red !important;
+                    }
+
+                    >.actions {
+                        height: 80px;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        display: flex;
+                        flex-wrap: wrap;
+                        column-gap: 5px;
+                        row-gap: 5px;
+                    }
+
+                    .icon {
+                        font-size: 75px;
+                        width: 100%;
+                        text-align: center;
+                        cursor: default;
+                    }
+
+                    &.clickable:hover {
+                        background-color: var(--color-hover);
+                        cursor: pointer;
+
+                        * {
+                            cursor: pointer;
+                        }
+
+                        button {
+                            &:hover {
+                                background-color: white;
+                            }
+                        }
+                    }
+
+                    input {
+                        border: 1px solid #D4D4D4;
+                        border-radius: 6px;
+                        width: 100%;
+                        padding: .5em;
+                        margin-bottom: .25em;
+                        outline: none;
+
+                        &:focus,
+                        &:hover {
+                            border: 1px solid black;
+                            background-color: var(--color-hover);
+                        }
+                    }
+
+                    .btn-link {
+                        background: none;
+                        border: 0 none;
+                        color: blue;
+
+                        &:focus,
+                        &:hover {
+                            border: none;
+                            background-color: transparent;
+                            font-weight: 700;
+                        }
+                    }
+
+                    button {
+                        border: 1px solid #D4D4D4;
+                        background-color: #D4D4D4;
+                        outline: none;
+                        border-radius: 5px;
+                        padding: .3em;
+
+                        &:focus,
+                        &:hover {
+                            background-color: var(--color-hover);
+                        }
+                    }
+
+                    &.login {
+                        form {
+                            .actions {
+                                margin-top: 1em;
+                                display: flex;
+                                justify-content: flex-end;
+                                column-gap: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.novo-cadastro {}
+    }
+}

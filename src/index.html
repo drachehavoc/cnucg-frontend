@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.scss'>
+    <script async defer type="module" src='main.ts'></script>
+    <title>Cadastro Nacional de Cães Guias</title>
+</head>
+
+<body class="preload">
+    <header>
+        <div class="logo">
+            <img src="./assets/logo-ifc.png">
+        </div>
+        <div class="search">
+            <input placeholder="caso não encontre o que procura no menu, pesquise aqui">
+            <button>
+                <span class="icon material-symbols-outlined">search</span>
+            </button>
+        </div>
+        <div class="permission-name">
+            Nome do C
+        </div>
+    </header>
+
+    <main>
+        <section class="home">
+            <div class="menu">
+                <div class="menu-item" data-unlogged>
+                    <div>Usuários</div>
+                    <span class="icon material-symbols-outlined">face</span>
+                    <div class="actions">
+                        <button data-permission="user">meus dados pessoas</button>
+                        <button data-permission="user">alterar senha</button>
+                        <button data-permission="admin">cadastrar novo</button>
+                        <button data-permission="admin">pesquisar/editar</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-unlogged>
+                    <div>Cães Guia</div>
+                    <span class="icon material-symbols-outlined">pets</span>
+                    <div class="actions">
+                        <button data-permission="user">dados do cão</button>
+                        <button data-permission="admin">cadastrar novo</button>
+                        <button data-permission="admin">pesquisar/editar</button>
+                    </div>
+                </div>
+                <div class="menu-item" data-unlogged>
+                    <div>Instituiçoes</div>
+                    <span class="icon material-symbols-outlined">corporate_fare</span>
+                    <div class="actions">
+                        <button>pesquisar</button>
+                        <button data-permission="admin">pesquisar/editar</button>
+                    </div>
+                </div>
+                <div class="menu-item clickable" data-open="validar-carteira">
+                    <div>Carteira Nacional</div>
+                    <span class="icon material-symbols-outlined">qr_code_2</span>
+                    <div class="actions">
+                        <button data-permission="user">emitir/reemitir carteira nacional de cães guia</button>
+                        <button data-permission="admin">pesquisar/visualizar carteiras nacional de cães guia</button>
+                        <button data-only-unlogged>
+                            quero verificar a autenticidade de
+                            uma carteina nacional de usuário de
+                            cão guia
+                        </button>
+                    </div>
+                </div>
+                <div class="menu-item clickable" data-only-unlogged data-open="novo-cadastro">
+                    <div>Novo Cadastro</div>
+                    <span class="icon material-symbols-outlined">sound_detection_dog_barking </span>
+                    <div class="actions">
+                        <button>sou usuário de cão guia e quero me cadastrar para obter a carteina nacional de usuário
+                            de
+                            cão guia</button>
+                    </div>
+                </div>
+                <div class="menu-item login" data-only-unlogged>
+                    <div>Acesso</div>
+                    <span class="icon material-symbols-outlined">assignment_ind</span>
+                    <form>
+                        <input placeholder="login" type="text">
+                        <input placeholder="senha" type="password">
+                        <div class="actions">
+                            <button class="btn-link">recuperar senha</button>
+                            <button>entrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="before-show novo-cadastro">
+            <form class="user-form">
+                <h1>Cadastro de Usuário de Cães Guia</h1>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti corporis quibusdam aut nam eius
+                    culpa sed, quasi ratione commodi accusantium dolor, error ipsa iusto atque. Sed deserunt id dolorem
+                    dolorum corrupti, ad dolore laudantium aut animi, praesentium atque unde incidunt? Natus quisquam
+                    repellat, a cupiditate dignissimos architecto odit ipsum reprehenderit vel perspiciatis similique
+                    harum ipsa eum, laudantium animi dolores, magni suscipit. Ea impedit deleniti consequuntur modi non
+                    eum dolores hic, quae molestias autem voluptatem eius tempora, explicabo quisquam omnis illo
+                    quibusdam corrupti. Minus quo velit ratione sit dignissimos suscipit ad.
+                </p>
+                <h2>Dados de Identificação</h2>
+                <div>
+                    <label for="nome">Nome completo</label>
+                    <input type="text" name="nome" id="nome">
+                </div>
+                <div class="_2">
+                    <label for="data_nascimento">Data de Nascimento</label>
+                    <input type="date" name="data_nascimento" id="data_nascimento" data-maioridade>
+                </div>
+                <div class="_2">
+                    <label for="rg">RG</label>
+                    <input type="text" name="rg" id="rg">
+                </div>
+                <div class="_2">
+                    <label for="cpf">CPF</label>
+                    <input type="text" name="cpf" id="cpf" data-mask="000.000.000-00">
+                </div>
+                <div class="_2">
+                    <label for="sexo">Sexo</label>
+                    <select type="text" name="sexo" id="sexo">
+                        <option value=""></option>
+                        <option value="masc">Masculino</option>
+                        <option value="fem">Feminino</option>
+                        <option value="nao-bin">Não Binário</option>
+                    </select>
+                </div>
+
+                <h2>Endereço</h2>
+                <div class="_3">
+                    <label for="endereco_cep">CEP</label>
+                    <input type="text" name="endereco_cep" id="endereco_cep" data-mask="00000-000" data-api-cep>
+                </div>
+                <div class="_3">
+                    <label for="endereco_estado">Estado</label>
+                    <select type="text" name="endereco_estado" id="endereco_estado" data-ibge-estados="endereco_cidade"
+                        data-api-cep-uf>
+                        <option>carregando lista de estados</option>
+                    </select>
+                </div>
+                <div class="_3">
+                    <label for="endereco_cidade">Cidade</label>
+                    <select name="endereco_cidade" id="endereco_cidade" data-api-cep-localidade disabled>
+                        <option>selecione o estado antes</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="endereco_logradouro">Logradouro / Localidade</label>
+                    <input type="text" name="endereco_logradouro" id="endereco_logradouro" data-api-cep-logradouro>
+                </div>
+                <div class="_3">
+                    <label for="endereco_numero">Número</label>
+                    <input type="text" name="endereco_numero" id="endereco_numero">
+                </div>
+                <div class="_3">
+                    <label for="endereco_complemento">Complemento</label>
+                    <input type="text" name="endereco_complemento" id="endereco_complemento" data-api-cep-complemento>
+                </div>
+                <div>
+                    <label for="endereco_bairro">Bairro</label>
+                    <input type="text" name="endereco_bairro" id="endereco_bairro" data-api-cep-bairro>
+                </div>
+
+                <h2>Dados para Contato</h2>
+                <div class="_2">
+                    <label for="email">E-mail</label>
+                    <input type="text" name="email" id="email">
+                </div>
+                <div class="_2">
+                    <label for="confirmacao-email">Comfirmaçao de E-mail</label>
+                    <input type="text" name="confirmacao-email" id="confirmacao-email">
+                </div>
+                <div class="_2">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" name="telefone" id="telefone" data-mask="(00) 000000000" data-api-cep-ddd>
+                </div>
+                <div class="_2">
+                    <label for="id_instituicao">Instituição</label>
+                    <select type="text" name="id_instituicao" id="id_instituicao">
+                    </select>
+                </div>
+
+                <h2>Segurança / Senha</h2>
+                <div class="_2">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha">
+                </div>
+                <div class="_2">
+                    <label for="comfirmacao-senha">Comfirmação de Senha</label>
+                    <input type="password" name="comfirmacao-senha" id="comfirmacao-senha">
+                </div>
+
+                <div class="actions">
+                    <button class="link" data-close="novo-cadastro">Cancelar / Voltar</button>
+                    <button>Cadastrar</button>
+                </div>
+            </form>
+        </section>
+
+
+        <section class="before-show validar-carteira">
+            <button data-close="validar-carteira">close</button>
+
+        </section>
+    </main>
+    <script>
+
+    </script>
+</body>
+
+</html>
