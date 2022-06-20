@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+:host {
+    display: inline-block;
+    width: 600px;
+    height: 600px;
+    --section-visibility: visible;
+    --section-transition: 0;
+    --section-opacity: 1;
+    --section-translateX: 0%;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+section {
+    position: absolute;
+    inset: 0 0 0 0;
+    transition: var(--section-transition);
+    opacity: var(--section-opacity);
+    transform: translateX(var(--section-translateX));
+    visibility: var(--section-visibility);
+}

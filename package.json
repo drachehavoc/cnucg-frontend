@@ -18,6 +18,7 @@
     "parcel": "^2.6.0"
   },
   "devDependencies": {
+    "@parcel/transformer-inline-string": "^2.6.0",
     "@parcel/transformer-sass": "^2.6.0"
   }
 }

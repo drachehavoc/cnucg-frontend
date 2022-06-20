@@ -1,0 +1,1 @@
+declare function require(path: string): Promise<any>

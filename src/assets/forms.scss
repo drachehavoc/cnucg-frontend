@@ -1,0 +1,48 @@
+.user-form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: min(50%, 760px);
+
+    h2 {
+        flex: 1 1 100%;
+    }
+
+    >div {
+        display: inline-block;
+        flex: 1 1 100%;
+        padding: .25em;
+
+        &._2 {
+            flex: 1 1 50%;
+        }
+
+        &._3 {
+            flex: 1 1 33.3333%;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+
+            &:focus,
+            &:hover {
+                border-color: rgb(65, 173, 38);
+                transition: 0.5s;
+            }
+        }
+
+    }
+
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 10px;
+        padding: 2em 0;
+    }
+}
