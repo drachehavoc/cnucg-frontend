@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined);
+
+main {
+    overflow: auto;
+    height: 100%;
+}
+
+.icon {
+    vertical-align: middle;
+
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    cursor: default;
+    // user-select: none;
+
+    &.warning {
+        tr {
+            &:hover {
+                background-color: #C0392B66;
+            }
+
+            th {
+                background-color: #C0392B;
+            }
+        }
+    }
+
+    tr {
+        border: 1px solid black;
+
+        &:hover {
+            background-color: #FFFFFFAA;
+        }
+
+        td,
+        th {
+            border-bottom: 1px solid black;
+            padding: .5em;
+            margin: 0;
+        }
+    }
+
+    thead {
+        tr {
+            th {
+                background-color: #78B96D;
+                color: #FFFFFF;
+                text-align: left;
+            }
+        }
+    }
+}

@@ -1,0 +1,1 @@
+export { Documentacao } from "./documentacao.component"
