@@ -47,7 +47,19 @@ section {
                 transition: .3s;
                 visibility: hidden;
                 position: absolute;
+
+                button[data-permission*="user"] {
+                    background-color: yellow;
+                }
                 
+                button[data-permission*="admin"] {
+                    background-color: red;
+                }
+                
+                button[data-permission*="user"][data-permission*="admin"] {
+                    background-color: pink;
+                }
+
                 &.show {
                     position: static;
                     visibility: visible;
@@ -129,7 +141,8 @@ section {
                     border-radius: 5px;
                     padding: .3em;
                     display: none;
-                    
+                    cursor: pointer;
+
                     &.show{
                         display: block;
                     }

@@ -13,23 +13,17 @@ export class Home extends HTMLElement {
         this.#shadow.innerHTML = template
         this.#container = this.#shadow.querySelector("section") as HTMLElement
         dataOpenSection(this.#container)
-        this.#showAllowed("unlogged")
+        this.showAllowed("any")
     }
 
-    #showAllowed(level: string) {
+    showAllowed(level: string) {
         const els = this.#container.querySelectorAll<HTMLElement>(`[data-permission*="${level}"]`)
-        els.forEach(el => {
-            el.classList.add("show")
-            el.closest(".menu-item")?.classList.add("show")
-        })
+        els.forEach(el => el.classList.add("show"))
     }
 
-    #hide(level: string) {
+    hide(level: string) {
         const els = this.#container.querySelectorAll<HTMLElement>(`[data-permission*="${level}"]`)
-        els.forEach(el => {
-            el.classList.remove("show")
-            el.closest(".menu-item")?.classList.remove("show")
-        })
+        els.forEach(el => el.classList.remove("show"))
     }
 
 }

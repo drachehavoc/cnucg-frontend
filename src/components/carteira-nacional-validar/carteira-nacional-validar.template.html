@@ -1,0 +1,37 @@
+<link rel='stylesheet' type='text/css' media='screen' href='../../assets/forms.scss'>
+<link rel='stylesheet' type='text/css' media='screen' href='../../assets/buttons.scss'>
+<link rel='stylesheet' type='text/css' media='screen' href='./carteira-nacional-validar.template.scss'>
+
+<section>
+    <form class="user-form">
+        <h1>Carteira Nacional</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet animi qui deserunt laborum eius perferendis
+            aperiam autem dignissimos odio quia perspiciatis saepe recusandae, vero unde exercitationem molestias ipsum
+            vitae dolore?
+        </p>
+        <div>
+            <label for="cameras">Câmera</label>
+            <p>
+                caso queira utilizar a leitura do QrCode da Carteira Nacional de Usuários de Cães Guia, por favor
+                selecione
+                qual câmera você deseja usar, caso constrário, digite o número no campo CNUCG.
+            </p>
+            <select name="cameras" id="cameras" disabled>
+                <option>aguarde procurando câmeras</option>
+            </select>
+        </div>
+        <div class="qr-show-cam hide">
+            <canvas width="400" height="400"></canvas>
+        </div>
+        <div>
+            <label for="cnucg">CNUCG</label>
+            <input type="text" name="cnucg" id="cnucg" data-mask="000.000.000.000">
+        </div>
+        <div class="actions">
+            <button class="bt-primary">
+                validar
+            </button>
+        </div>
+    </form>
+</section>

@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "dev": "parcel src/index.html",
+    "dev": "parcel src/index.html --https",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,10 +15,13 @@
   "license": "ISC",
   "dependencies": {
     "imask": "^6.4.2",
-    "parcel": "^2.6.0"
+    "parcel": "^2.6.0",
+    "qr-scanner": "^1.4.1",
+    "qrcode": "^1.5.0"
   },
   "devDependencies": {
     "@parcel/transformer-inline-string": "^2.6.0",
-    "@parcel/transformer-sass": "^2.6.0"
+    "@parcel/transformer-sass": "^2.6.0",
+    "@types/qrcode": "^1.4.2"
   }
 }

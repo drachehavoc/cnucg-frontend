@@ -1,11 +1,27 @@
+$small: 500px;
+$medium: 970px;
+
 .user-form {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: min(50%, 760px);
+    // width: min(80%, 1024px);
+    padding: 2em;
+
+    // @media screen and (max-width: $small) {
+    //     width: min(50%, 970px);
+    // }
+
+    @media screen and (min-width: $medium) {
+        width: min(50%, $medium);
+    }
 
     h2 {
         flex: 1 1 100%;
+    }
+
+    label {
+        font-weight: 700;
     }
 
     >div {
@@ -15,10 +31,18 @@
 
         &._2 {
             flex: 1 1 50%;
+
+            @media screen and (max-width: $small) {
+                flex: 1 1 100%;
+            }
         }
 
         &._3 {
             flex: 1 1 33.3333%;
+
+            @media screen and (max-width: $small) {
+                flex: 1 1 100%;
+            }
         }
 
         select,

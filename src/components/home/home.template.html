@@ -2,7 +2,7 @@
 <section class="home">
     <div class="menu">
 
-        <div class="menu-item">
+        <div class="menu-item" data-permission="user">
             <div>
                 Documentação
             </div>
@@ -16,8 +16,8 @@
                 </button>
             </div>
         </div>
-        
-        <div class="menu-item">
+
+        <div class="menu-item" data-permission="user admin">
             <div>
                 Usuários
             </div>
@@ -37,8 +37,8 @@
                 </button>
             </div>
         </div>
-        
-        <div class="menu-item">
+
+        <div class="menu-item" data-permission="user admin">
             <div>
                 Cães Guia
             </div>
@@ -55,23 +55,20 @@
                 </button>
             </div>
         </div>
-        
-        <div class="menu-item">
+
+        <div class="menu-item" data-permission="admin">
             <div>
                 Instituiçoes
             </div>
             <span class="icon material-symbols-outlined">corporate_fare</span>
             <div class="actions">
-                <button data-permission="user">
-                    pesquisar
-                </button>
                 <button data-permission="admin">
                     pesquisar/editar
                 </button>
             </div>
         </div>
 
-        <div class="menu-item clickable" data-open-section="documento">
+        <div class="menu-item clickable" data-open-section="documento" data-permission="user admin">
             <div>
                 Carteira Nacional
             </div>
@@ -83,7 +80,16 @@
                 <button data-permission="admin">
                     pesquisar/visualizar carteiras nacional de cães guia
                 </button>
-                <button data-permission="unlogged">
+            </div>
+        </div>
+
+        <div class="menu-item clickable" data-open-section="validar-documento" data-permission="any only-unlogged">
+            <div>
+                Validar Carteira Nacional
+            </div>
+            <span class="icon material-symbols-outlined">qr_code_2</span>
+            <div class="actions">
+                <button data-permission="any only-unlogged">
                     quero verificar a autenticidade de
                     uma carteina nacional de usuário de
                     cão guia
@@ -91,27 +97,30 @@
             </div>
         </div>
 
-        <div class="menu-item clickable" data-open-section="novo-cadastro">
+        <div class="menu-item clickable" data-open-section="novo-cadastro" data-permission="any only-unlogged">
             <div>
                 Novo Cadastro
             </div>
             <span class="icon material-symbols-outlined">sound_detection_dog_barking </span>
             <div class="actions">
-                <button data-permission="unlogged">
+                <button data-permission="any">
                     sou usuário de cão guia e quero me cadastrar para obter a
                     carteina nacional de usuário de cão guia
                 </button>
             </div>
         </div>
 
-        <div class="menu-item clickable" data-open-section="acesso">
+        <div class="menu-item clickable" data-open-section="acesso" data-permission="any user admin">
             <div>
                 Acesso
             </div>
             <span class="icon material-symbols-outlined">assignment_ind</span>
             <div class="actions">
-                <button data-permission="unlogged">
+                <button data-permission="any only-unlogged">
                     acesse o sistema para as demais funcionalidades!
+                </button>
+                <button data-permission="user admin">
+                    sair ou acessar com outro perfil.
                 </button>
             </div>
         </div>

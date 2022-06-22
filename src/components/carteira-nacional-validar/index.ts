@@ -1,0 +1,1 @@
+export { CarteiraNacionalValidar } from "./carteira-nacional-validar.component"

@@ -1,5 +1,11 @@
 import template from "bundle-text:./cdc-desktop.template.html"
 
+export class DesktopEvent extends CustomEvent<{ sectionName: string }> {
+    constructor(type: string, sectionName: string) {
+        super(type, { detail: { sectionName } })
+    }
+}
+
 export class CDCDesktop extends HTMLElement {
     #shadowRoot = this.attachShadow({ mode: 'closed' })
     #history: Array<string> = []
@@ -65,12 +71,16 @@ export class CDCDesktop extends HTMLElement {
             this.#transitionHide(curr, 25) // goes to left
             this.#transitionShow(next, -25) // come form right
             this.#history.pop()
+            next.children[0].dispatchEvent(new DesktopEvent("desktop-show", next.id))
+            curr.children[0].dispatchEvent(new DesktopEvent("desktop-hide", curr.id))
             return
         }
 
         this.#transitionHide(curr, -25) // goes to left
         this.#transitionShow(next, 25) // come form right
         this.#history.push(next.id)
+        next.children[0].dispatchEvent(new DesktopEvent("desktop-show", next.id))
+        curr.children[0].dispatchEvent(new DesktopEvent("desktop-hide", curr.id))
     }
 
     addSection(el: HTMLElement, name?: string) {
