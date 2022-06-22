@@ -4,6 +4,8 @@ import { CDCDesktop } from "./components/cdc-desktop"
 import { Login } from "./components/login"
 import { CarteiraNacionalValidar } from "./components/carteira-nacional-validar"
 import { CarteiraNacional } from "./components/carteira-nacional/carteira-nacional.component"
+import { LoginError } from "./components/login-error"
+import { Documentacao } from "./components/documentacao"
 
 //
 const main = document.querySelector("main") as HTMLElement
@@ -21,10 +23,12 @@ const home = new Home
 // 
 const desktop = new CDCDesktop()
 desktop.addSection(home, "home")
-desktop.addSection(new NovoCadastro, "novo-cadastro")
+desktop.addSection(new NovoCadastro, "cadastro")
 desktop.addSection(new CarteiraNacionalValidar, "validar-documento")
 desktop.addSection(new CarteiraNacional, "documento")
+desktop.addSection(new Documentacao, "documentacao")
 desktop.addSection(new Login, "acesso")
+desktop.addSection(new LoginError, "acesso-erro")
 main.append(desktop)
 
 window.addEventListener('load', ev => {

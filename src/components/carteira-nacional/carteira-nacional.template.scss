@@ -21,6 +21,7 @@ main {
         padding: 3vmin;
         border-radius: 4px;
         transition: .3s;
+        box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
 
         &.hide {
             opacity: 0;

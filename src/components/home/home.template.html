@@ -1,4 +1,4 @@
-<link rel='stylesheet' type='text/css' media='screen' href='./home.template.scss'>
+<link rel='stylesheet' type='text/css' href='./home.template.scss'>
 <section class="home">
     <div class="menu">
 
@@ -8,11 +8,8 @@
             </div>
             <span class="icon material-symbols-outlined">description</span>
             <div class="actions">
-                <button data-permission="user">
-                    enviar para validação
-                </button>
-                <button data-permission="user">
-                    verifiar status
+                <button data-permission="user" data-open-section="documentacao">
+                    verifiar status/enviar para validação
                 </button>
             </div>
         </div>
@@ -23,8 +20,8 @@
             </div>
             <span class="icon material-symbols-outlined">face</span>
             <div class="actions">
-                <button data-permission="user">
-                    meus dados pessoas
+                <button data-permission="user" data-open-section="cadastro/l">
+                    dados pessoas
                 </button>
                 <button data-permission="user">
                     alterar senha
@@ -97,7 +94,7 @@
             </div>
         </div>
 
-        <div class="menu-item clickable" data-open-section="novo-cadastro" data-permission="any only-unlogged">
+        <div class="menu-item clickable" data-open-section="cadastro" data-permission="any only-unlogged">
             <div>
                 Novo Cadastro
             </div>

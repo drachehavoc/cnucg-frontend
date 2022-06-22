@@ -70,7 +70,6 @@ export class CarteiraNacionalValidar extends HTMLElement {
         //     .catch(error => console.log(error || 'No QR code found.'));
 
         //
-
         this.#attachSelectCameraEventListener()
     }
 

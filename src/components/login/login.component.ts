@@ -17,15 +17,22 @@ export class Login extends HTMLElement {
             const login = form.login.value.replace(/[\.-]+/ig, "")
             const pass = form.password.value
 
-            if (login == "00000000000") {
+            if (login == "11111111111") {
                 window.dispatchEvent(new CustomEvent("login", { detail: "user" }))
+                console.warn("REMOVER ESSA LINHA: application fake somente para apresentação")
+                console.warn("#")
+                localStorage.setItem("cnucg", "111.111.111.111") 
+                location.hash = "home"
                 return
             }
             
-            if (login == "11111111111") {
+            if (login == "77777777777") {
                 window.dispatchEvent(new CustomEvent("login", { detail: "admin" }))
+                location.hash = "home"
                 return
             }
+
+            location.hash = "acesso-erro"
         })
     }
 }

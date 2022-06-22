@@ -17,8 +17,13 @@ export class CarteiraNacional extends HTMLElement {
         const doc = <HTMLParagraphElement>this.#shadow.querySelector("#doc")
 
         this.addEventListener("desktop-show", ev => {
-            const cnucg = location.hash.replace(/.+?\//ig, "")
+            let cnucg = location.hash.replace(/.+?\//ig, "")
 
+            if (cnucg == location.hash) {
+                cnucg = localStorage.getItem("cnucg") ?? ""
+            }
+
+            console.warn("#")
             if (cnucg !== "111.111.111.111") {
                 carteira.classList.add("hide")
                 erro.classList.remove("hide")
